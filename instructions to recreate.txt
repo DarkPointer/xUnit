@@ -1,0 +1,11 @@
+dotnet new sln -o unit-testing-using-dotnet-test
+cd unit-testing-using-dotnet-test
+dotnet new classlib -f netcoreapp3.1 -o PrimeService
+ren .\PrimeService\Class1.cs PrimeService.cs
+dotnet sln add ./PrimeService/PrimeService.csproj
+dotnet new xunit -f netcoreapp3.1 -o PrimeService.Tests
+dotnet add ./PrimeService.Tests/PrimeService.Tests.csproj reference ./PrimeService/PrimeService.csproj
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
+dotnet new console -f netcoreapp3.1 -o PrimeService.ConsoleApp
+dotnet add ./PrimeService.ConsoleApp/PrimeService.ConsoleApp.csproj reference ./PrimeService/PrimeService.csproj
+dotnet sln add ./PrimeService.ConsoleApp/PrimeService.ConsoleApp.csproj

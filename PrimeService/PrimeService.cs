@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace PrimeService
+﻿namespace PrimeService
 {
-    public class Class1
+    public class PrimeService
     {
         public int dummy()
         {
